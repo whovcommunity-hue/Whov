@@ -1,0 +1,14 @@
+{
+  "brand": {
+    "name": "Whov",
+    "logo": "logo.png",
+    "favicon": "favicon.png"
+  },
+  "links": {
+    "discord": "https://discord.gg/Kn6rqd9VWS",
+    "x": "https://twitter.com/yourhandle",
+    "instagram": "https://instagram.com/yourhandle",
+    "github": "https://github.com/yourhandle",
+    "email": "hello@whov.dev"
+  }
+}
