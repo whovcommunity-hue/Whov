@@ -59,20 +59,21 @@
     background:rgba(240,239,233,.95);
   }
   .logo{
-    display:flex; align-items:center; gap:10px;
-    font-weight:700; font-size:18px; letter-spacing:-.4px;
+    display:flex; align-items:center; gap:12px;
+    font-weight:700; font-size:20px; letter-spacing:-.5px;
     cursor:pointer;
   }
   .logo-mark{
-  width:32px; height:32px; border-radius:8px;
-  background:transparent;
-  display:flex; align-items:center; justify-content:center;
-  color:var(--text);
-  overflow:visible;
-  flex-shrink:0;
-}
-.logo-mark img{ width:100%; height:100%; object-fit:contain; display:block; }
-  .logo-mark .ico{ width:14px; height:14px; stroke-width:2.5; }
+    width:40px; height:40px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    background:transparent;
+  }
+  .logo-mark img{
+    width:100%; height:100%;
+    object-fit:contain;
+    display:block;
+  }
   .nav-links{
     display:flex; gap:34px; align-items:center;
     font-size:14.5px; color:var(--muted); font-weight:500;
@@ -609,7 +610,6 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></symbol>
     <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V5a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V6"/><path d="M16 12h.01"/></symbol>
     <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v.5A2.5 2.5 0 0 0 4.5 7.5c0 .7.3 1.3.7 1.8A2.5 2.5 0 0 0 4 11.5 2.5 2.5 0 0 0 6.5 14H7v.5A2.5 2.5 0 0 0 9.5 17H10v2.5a1 1 0 0 0 1 1h.5v-19H10A2.5 2.5 0 0 0 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v.5a2.5 2.5 0 0 1 2.5 2.5c0 .7-.3 1.3-.7 1.8A2.5 2.5 0 0 1 20 11.5a2.5 2.5 0 0 1-2.5 2.5H17v.5a2.5 2.5 0 0 1-2.5 2.5H14v2.5a1 1 0 0 1-1 1h-.5v-19h1A2.5 2.5 0 0 1 14.5 2z"/></symbol>
     <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M3 11l9-6 9 6M3 11h18"/></symbol>
@@ -633,7 +633,9 @@
 
 <nav id="nav">
   <a href="#home" class="logo" data-link="home">
-    <div class="logo-mark" id="logo-mark-1"><svg class="ico"><use href="#i-crown"/></svg></div>
+    <div class="logo-mark">
+      <img src="https://drive.google.com/thumbnail?id=1nUj_7v4TZiPv6x8GYjfV-BaKmTgQLKpF&sz=w1000" alt="Whov Logo" loading="eager" />
+    </div>
     <span data-brand="name">Whov</span>
   </a>
   <div class="nav-links">
@@ -1275,7 +1277,9 @@
   <div class="foot-wrap">
     <div class="foot-brand">
       <a href="#home" class="logo" data-link="home">
-        <div class="logo-mark" id="logo-mark-2"><svg class="ico"><use href="#i-crown"/></svg></div>
+        <div class="logo-mark">
+          <img src="https://drive.google.com/thumbnail?id=1nUj_7v4TZiPv6x8GYjfV-BaKmTgQLKpF&sz=w1000" alt="Whov Logo" loading="eager" />
+        </div>
         <span data-brand="name">Whov</span>
       </a>
       <p>A private, invite-only circle for founders, traders, investors and geopolitical thinkers. High signal. Zero noise.</p>
@@ -1337,67 +1341,34 @@
 
 <script>
 /* =========================================================
-   CONFIG LOADER
-   LOGO and FAVICON are SEPARATE files.
-   - Logo:    logo.png / logo.jpg / logo.jpeg / logo.webp
-   - Favicon: favicon.png / favicon.jpg / favicon.jpeg / favicon.webp / favicon.ico
-   config.json overrides auto-detect.
+   LOGO embedded directly in HTML (no JS delay)
+   FAVICON loaded via JS from Google Drive
+   Social links loaded from config.json
    ========================================================= */
+
+/* ---- FAVICON ---- */
+(function setFavicon(){
+  var favUrl = 'https://drive.google.com/thumbnail?id=1nUj_7v4TZiPv6x8GYjfV-BaKmTgQLKpF&sz=w256';
+
+  var l = document.createElement('link');
+  l.rel = 'icon';
+  l.type = 'image/png';
+  l.href = favUrl;
+  document.head.appendChild(l);
+
+  var apple = document.createElement('link');
+  apple.rel = 'apple-touch-icon';
+  apple.href = favUrl;
+  document.head.appendChild(apple);
+
+  var shortcut = document.createElement('link');
+  shortcut.rel = 'shortcut icon';
+  shortcut.href = favUrl;
+  document.head.appendChild(shortcut);
+})();
+
+/* ---- CONFIG LOADER (brand name + links only) ---- */
 (function loadConfig(){
-
-  var LOGO_CANDIDATES    = ['logo.png', 'logo.jpg', 'logo.jpeg', 'logo.webp', 'Logo.png', 'Logo.jpg'];
-  var FAVICON_CANDIDATES = ['favicon.png', 'favicon.jpg', 'favicon.jpeg', 'favicon.webp', 'favicon.ico', 'Favicon.png', 'Favicon.jpg'];
-
-  var FALLBACK_LOGO_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23f0efe9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></svg>'
-  );
-
-  var FALLBACK_FAVICON_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a1a1a"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></svg>'
-  );
-
-  function detectFile(candidates, cb){
-    var i = 0;
-    function next(){
-      if (i >= candidates.length){ cb(null); return; }
-      var c = candidates[i++];
-      var img = new Image();
-      img.onload = function(){ cb(c); };
-      img.onerror = function(){ next(); };
-      img.src = c + '?v=' + Date.now();
-    }
-    next();
-  }
-
-  function applyLogo(src){
-    document.querySelectorAll('.logo-mark').forEach(function(m){
-      m.innerHTML = '<img src="' + src + '" alt="logo" />';
-    });
-  }
-
-  function applyFavicon(src){
-    document.querySelectorAll("link[rel*='icon']").forEach(function(el){ el.parentNode.removeChild(el); });
-
-    var l = document.createElement('link');
-    l.rel = 'icon';
-    if (src.indexOf('data:image/svg') === 0) l.type = 'image/svg+xml';
-    else if (src.indexOf('.png') > -1) l.type = 'image/png';
-    else if (src.indexOf('.jpg') > -1 || src.indexOf('.jpeg') > -1) l.type = 'image/jpeg';
-    else if (src.indexOf('.ico') > -1) l.type = 'image/x-icon';
-    l.href = src;
-    document.head.appendChild(l);
-
-    var apple = document.createElement('link');
-    apple.rel = 'apple-touch-icon';
-    apple.href = src;
-    document.head.appendChild(apple);
-
-    var shortcut = document.createElement('link');
-    shortcut.rel = 'shortcut icon';
-    shortcut.href = src;
-    document.head.appendChild(shortcut);
-  }
-
   fetch('config.json?v=' + Date.now())
     .then(function(r){
       if (!r.ok) throw new Error('config.json not found');
@@ -1410,40 +1381,6 @@
         });
         document.title = cfg.brand.name + ' — A Private Circle';
       }
-
-      /* LOGO */
-      if (cfg.brand && cfg.brand.logo){
-        var testImg = new Image();
-        testImg.onload = function(){ applyLogo(cfg.brand.logo); };
-        testImg.onerror = function(){
-          detectFile(LOGO_CANDIDATES, function(found){
-            applyLogo(found || FALLBACK_LOGO_SVG);
-          });
-        };
-        testImg.src = cfg.brand.logo + '?v=' + Date.now();
-      } else {
-        detectFile(LOGO_CANDIDATES, function(found){
-          applyLogo(found || FALLBACK_LOGO_SVG);
-        });
-      }
-
-      /* FAVICON */
-      if (cfg.brand && cfg.brand.favicon){
-        var testFav = new Image();
-        testFav.onload = function(){ applyFavicon(cfg.brand.favicon); };
-        testFav.onerror = function(){
-          detectFile(FAVICON_CANDIDATES, function(found){
-            applyFavicon(found || FALLBACK_FAVICON_SVG);
-          });
-        };
-        testFav.src = cfg.brand.favicon + '?v=' + Date.now();
-      } else {
-        detectFile(FAVICON_CANDIDATES, function(found){
-          applyFavicon(found || FALLBACK_FAVICON_SVG);
-        });
-      }
-
-      /* LINKS */
       if (cfg.links){
         Object.keys(cfg.links).forEach(function(key){
           var url = cfg.links[key];
@@ -1463,11 +1400,12 @@
     })
     .catch(function(err){
       console.warn('Config load issue:', err.message);
-      detectFile(LOGO_CANDIDATES, function(found){ applyLogo(found || FALLBACK_LOGO_SVG); });
-      detectFile(FAVICON_CANDIDATES, function(found){ applyFavicon(found || FALLBACK_FAVICON_SVG); });
     });
 })();
 
+/* =========================================================
+   PAGE ROUTER
+   ========================================================= */
 const pages = {
   home: 'page-home',
   about: 'page-about',
@@ -1550,6 +1488,9 @@ tabs.forEach(tab => {
   });
 });
 
+/* =========================================================
+   PARTICLES
+   ========================================================= */
 (function(){
   const canvas = document.getElementById('particles');
   const ctx = canvas.getContext('2d');
