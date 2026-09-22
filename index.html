@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Whov — A Private Circle for Founders, Traders & Investors</title>
+<title>Whov — A Private Circle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -41,6 +41,7 @@
   }
   .ico-lg{ width:26px; height:26px; }
   .ico-sm{ width:16px; height:16px; stroke-width:1.8; }
+  .ico-brand{ width:18px; height:18px; fill:currentColor; flex-shrink:0; }
 
   nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
@@ -67,7 +68,10 @@
     background:var(--text);
     display:flex; align-items:center; justify-content:center;
     color:var(--bg);
+    overflow:hidden;
+    flex-shrink:0;
   }
+  .logo-mark img{ width:100%; height:100%; object-fit:cover; display:block; }
   .logo-mark .ico{ width:14px; height:14px; stroke-width:2.5; }
   .nav-links{
     display:flex; gap:34px; align-items:center;
@@ -92,22 +96,13 @@
     font-family:inherit;
   }
   .btn-primary{ background:var(--text); color:var(--bg); }
-  .btn-primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 12px 28px rgba(26,26,26,.22);
-  }
-  .btn-ghost{
-    background:transparent; color:var(--text);
-    border:1.5px solid var(--line);
-  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(26,26,26,.22); }
+  .btn-ghost{ background:transparent; color:var(--text); border:1.5px solid var(--line); }
   .btn-ghost:hover{ background:var(--soft); transform:translateY(-2px); }
 
   .page{ display:none; }
   .page.active{ display:block; animation:pageIn .5s cubic-bezier(.2,.7,.3,1); }
-  @keyframes pageIn{
-    from{ opacity:0; transform:translateY(20px); }
-    to{ opacity:1; transform:translateY(0); }
-  }
+  @keyframes pageIn{ from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:translateY(0); } }
 
   .hero{
     min-height:100vh;
@@ -153,14 +148,8 @@
     background:var(--text); color:var(--bg);
     padding:16px 32px; font-size:15.5px; border-radius:999px;
   }
-  .btn-discord:hover{
-    transform:translateY(-3px) scale(1.02);
-    box-shadow:0 18px 40px rgba(26,26,26,.25);
-  }
-  @keyframes fadeUp{
-    from{ opacity:0; transform:translateY(28px);}
-    to{ opacity:1; transform:translateY(0);}
-  }
+  .btn-discord:hover{ transform:translateY(-3px) scale(1.02); box-shadow:0 18px 40px rgba(26,26,26,.25); }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(28px);} to{ opacity:1; transform:translateY(0);} }
   .scroll-ind{
     position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
     width:22px; height:36px; border:1.5px solid var(--line); border-radius:12px;
@@ -189,9 +178,7 @@
     font-size:clamp(30px,4.5vw,54px); font-weight:900;
     letter-spacing:-2.5px; line-height:1.06;
   }
-  .section-head p{
-    margin-top:20px; color:var(--muted); font-size:17px; line-height:1.65;
-  }
+  .section-head p{ margin-top:20px; color:var(--muted); font-size:17px; line-height:1.65; }
 
   .reveal{
     opacity:0; transform:translateY(44px);
@@ -255,9 +242,7 @@
     font-family:inherit;
   }
   .tab:hover{ color:var(--text); border-color:#c5c4bd; }
-  .tab.active{
-    background:var(--text); color:var(--bg); border-color:var(--text);
-  }
+  .tab.active{ background:var(--text); color:var(--bg); border-color:var(--text); }
   .tab-panel{ display:none; }
   .tab-panel.active{ display:block; }
 
@@ -288,23 +273,14 @@
     color:var(--text);
     transition:all .4s ease;
   }
-  .ex-card:hover .ex-ico{
-    background:var(--text); color:var(--bg);
-  }
+  .ex-card:hover .ex-ico{ background:var(--text); color:var(--bg); }
   .ex-card .ex-tag{
     font-size:11.5px; font-weight:600; letter-spacing:1.5px;
     text-transform:uppercase; color:var(--muted);
   }
-  .ex-card h4{
-    font-size:17px; font-weight:700; margin-bottom:8px;
-    letter-spacing:-.3px;
-  }
-  .ex-card p{
-    font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:18px;
-  }
-  .ex-card ul{
-    list-style:none; display:flex; flex-direction:column; gap:9px;
-  }
+  .ex-card h4{ font-size:17px; font-weight:700; margin-bottom:8px; letter-spacing:-.3px; }
+  .ex-card p{ font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:18px; }
+  .ex-card ul{ list-style:none; display:flex; flex-direction:column; gap:9px; }
   .ex-card li{
     font-size:13.5px; color:var(--text); font-weight:500;
     display:flex; align-items:center; gap:9px;
@@ -323,9 +299,7 @@
     font-size:clamp(28px,4vw,48px); font-weight:900;
     letter-spacing:-2px; line-height:1.08;
   }
-  .crypto-top p{
-    margin-top:20px; color:var(--muted); font-size:16.5px; line-height:1.65;
-  }
+  .crypto-top p{ margin-top:20px; color:var(--muted); font-size:16.5px; line-height:1.65; }
   .crypto-stats{
     display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px;
   }
@@ -635,7 +609,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-discord" viewBox="0 0 24 24"><path d="M8.5 17.5s-1.5 1-2 1.5c0 0-3-4.5-3-9.5 1.5-1.5 3.5-2 3.5-2l.5 1c1.5-.5 3-.5 4.5 0l.5-1s2 .5 3.5 2c0 5-3 9.5-3 9.5-.5-.5-2-1.5-2-1.5M9 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM15 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></symbol>
     <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V5a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V6"/><path d="M16 12h.01"/></symbol>
     <symbol id="i-brain" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 0 7 4.5v.5A2.5 2.5 0 0 0 4.5 7.5c0 .7.3 1.3.7 1.8A2.5 2.5 0 0 0 4 11.5 2.5 2.5 0 0 0 6.5 14H7v.5A2.5 2.5 0 0 0 9.5 17H10v2.5a1 1 0 0 0 1 1h.5v-19H10A2.5 2.5 0 0 0 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5v.5a2.5 2.5 0 0 1 2.5 2.5c0 .7-.3 1.3-.7 1.8A2.5 2.5 0 0 1 20 11.5a2.5 2.5 0 0 1-2.5 2.5H17v.5a2.5 2.5 0 0 1-2.5 2.5H14v2.5a1 1 0 0 1-1 1h-.5v-19h1A2.5 2.5 0 0 1 14.5 2z"/></symbol>
     <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M3 11l9-6 9 6M3 11h18"/></symbol>
@@ -643,25 +617,24 @@
     <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.9.7-2.2-.1-3-.8-.8-2.1-.9-2.9 0z"/><path d="M12 15l-3-3c.5-3 2-6 5.5-8.5 2.5-1.8 5.5-2 5.5-2s-.2 3-2 5.5C15.5 10.5 12.5 12 9.5 12.5z"/><path d="M9 12H5l1.5-3M12 15v4l3-1.5"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7"/></symbol>
-    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></symbol>
     <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
     <symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18M7 6h1v4M16.71 13.88l.7.71-2.82 2.82"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
     <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
-    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></symbol>
     <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 7l-3 7a3 3 0 0 0 6 0l-3-7zM19 7l-3 7a3 3 0 0 0 6 0l-3-7zM5 7h14"/></symbol>
-    <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></symbol>
     <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></symbol>
+    <symbol id="i-discord" viewBox="0 0 24 24"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
   </defs>
 </svg>
 
 <nav id="nav">
   <a href="#home" class="logo" data-link="home">
-    <div class="logo-mark"><svg class="ico"><use href="#i-crown"/></svg></div>
-    Whov
+    <div class="logo-mark" id="logo-mark-1"><svg class="ico"><use href="#i-crown"/></svg></div>
+    <span data-brand="name">Whov</span>
   </a>
   <div class="nav-links">
     <a href="#home" data-link="home">Home</a>
@@ -670,13 +643,12 @@
     <a href="#crypto" data-link="home">Markets</a>
     <a href="#about" data-link="about">About</a>
   </div>
-  <a href="https://discord.gg/Kn6rqd9VWS" class="btn btn-primary" target="_blank" rel="noopener">
-    <svg class="ico ico-sm"><use href="#i-discord"/></svg>
+  <a href="#" class="btn btn-primary" data-link-key="discord" target="_blank" rel="noopener">
+    <svg class="ico-brand"><use href="#i-discord"/></svg>
     Join Discord
   </a>
 </nav>
 
-<!-- HOME -->
 <div class="page active" id="page-home">
 
   <section class="hero">
@@ -687,8 +659,8 @@
       geopolitics, capital, entrepreneurship and markets — with peers who actually move.
     </p>
     <div class="hero-cta">
-      <a href="https://discord.gg/Kn6rqd9VWS" class="btn btn-discord" target="_blank" rel="noopener">
-        <svg class="ico ico-sm"><use href="#i-discord"/></svg>
+      <a href="#" class="btn btn-discord" data-link-key="discord" target="_blank" rel="noopener">
+        <svg class="ico-brand"><use href="#i-discord"/></svg>
         Join Discord
       </a>
       <a href="#pillars" class="btn btn-ghost">See what's inside</a>
@@ -754,11 +726,7 @@
           </div>
           <h4>Investment Theses</h4>
           <p>Share and stress-test long-form ideas on sectors, companies and macro trends.</p>
-          <ul>
-            <li>Deep-dive write-ups</li>
-            <li>Bear / bull debates</li>
-            <li>Peer review of ideas</li>
-          </ul>
+          <ul><li>Deep-dive write-ups</li><li>Bear / bull debates</li><li>Peer review of ideas</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -767,11 +735,7 @@
           </div>
           <h4>Portfolio Construction</h4>
           <p>How serious allocators build and rebalance across cycles and asset classes.</p>
-          <ul>
-            <li>Position sizing</li>
-            <li>Risk budgeting</li>
-            <li>Cycle positioning</li>
-          </ul>
+          <ul><li>Position sizing</li><li>Risk budgeting</li><li>Cycle positioning</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -780,11 +744,7 @@
           </div>
           <h4>Investor Mindset</h4>
           <p>Managing ego, drawdowns and the emotional weight of running real capital.</p>
-          <ul>
-            <li>Drawdown psychology</li>
-            <li>Conviction vs. stubbornness</li>
-            <li>Decision journals</li>
-          </ul>
+          <ul><li>Drawdown psychology</li><li>Conviction vs. stubbornness</li><li>Decision journals</li></ul>
         </div>
       </div>
     </div>
@@ -798,11 +758,7 @@
           </div>
           <h4>Technical &amp; Macro</h4>
           <p>Price action, market structure and macro context that actually matters.</p>
-          <ul>
-            <li>Chart breakdowns</li>
-            <li>Structure &amp; levels</li>
-            <li>Macro overlays</li>
-          </ul>
+          <ul><li>Chart breakdowns</li><li>Structure &amp; levels</li><li>Macro overlays</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -811,11 +767,7 @@
           </div>
           <h4>Risk Management</h4>
           <p>The unglamorous skill that separates survivors from statistics.</p>
-          <ul>
-            <li>Position sizing</li>
-            <li>R-multiple thinking</li>
-            <li>Stop discipline</li>
-          </ul>
+          <ul><li>Position sizing</li><li>R-multiple thinking</li><li>Stop discipline</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -824,11 +776,7 @@
           </div>
           <h4>Trade Journal</h4>
           <p>Post your trades, review mistakes and get feedback from real peers.</p>
-          <ul>
-            <li>Weekly reviews</li>
-            <li>Win/loss breakdowns</li>
-            <li>Honest peer critique</li>
-          </ul>
+          <ul><li>Weekly reviews</li><li>Win/loss breakdowns</li><li>Honest peer critique</li></ul>
         </div>
       </div>
     </div>
@@ -842,11 +790,7 @@
           </div>
           <h4>Zero to One</h4>
           <p>From idea to first paying customer — with founders who've actually done it.</p>
-          <ul>
-            <li>Idea validation</li>
-            <li>MVP playbooks</li>
-            <li>Early traction</li>
-          </ul>
+          <ul><li>Idea validation</li><li>MVP playbooks</li><li>Early traction</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -855,11 +799,7 @@
           </div>
           <h4>Scaling &amp; Ops</h4>
           <p>Systems, hiring, and the operating discipline that turns startups into companies.</p>
-          <ul>
-            <li>Operating cadence</li>
-            <li>Hiring frameworks</li>
-            <li>Systems &amp; SOPs</li>
-          </ul>
+          <ul><li>Operating cadence</li><li>Hiring frameworks</li><li>Systems &amp; SOPs</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -868,11 +808,7 @@
           </div>
           <h4>Fundraising</h4>
           <p>Deal structuring, investor conversations and honest talk on dilution.</p>
-          <ul>
-            <li>Pitch feedback</li>
-            <li>Term sheet breakdowns</li>
-            <li>Investor intros</li>
-          </ul>
+          <ul><li>Pitch feedback</li><li>Term sheet breakdowns</li><li>Investor intros</li></ul>
         </div>
       </div>
     </div>
@@ -886,11 +822,7 @@
           </div>
           <h4>Geopolitical Analysis</h4>
           <p>How power shifts, alliances and conflicts reshape global capital flows.</p>
-          <ul>
-            <li>Regional deep dives</li>
-            <li>Trade &amp; sanctions</li>
-            <li>Energy &amp; resources</li>
-          </ul>
+          <ul><li>Regional deep dives</li><li>Trade &amp; sanctions</li><li>Energy &amp; resources</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -899,11 +831,7 @@
           </div>
           <h4>Economic Policy</h4>
           <p>Central banks, fiscal policy and the machinery behind market cycles.</p>
-          <ul>
-            <li>Rate cycles</li>
-            <li>Inflation dynamics</li>
-            <li>Policy impact</li>
-          </ul>
+          <ul><li>Rate cycles</li><li>Inflation dynamics</li><li>Policy impact</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -912,11 +840,7 @@
           </div>
           <h4>Structured Debate</h4>
           <p>Formal voice debates where arguments win — not volume or insults.</p>
-          <ul>
-            <li>Weekly debate nights</li>
-            <li>Moderated discussions</li>
-            <li>Steel-man positions</li>
-          </ul>
+          <ul><li>Weekly debate nights</li><li>Moderated discussions</li><li>Steel-man positions</li></ul>
         </div>
       </div>
     </div>
@@ -930,11 +854,7 @@
           </div>
           <h4>Stocks &amp; Equities</h4>
           <p>Fundamental and technical discussion on listed businesses worldwide.</p>
-          <ul>
-            <li>Earnings breakdowns</li>
-            <li>Sector rotation</li>
-            <li>Valuation debates</li>
-          </ul>
+          <ul><li>Earnings breakdowns</li><li>Sector rotation</li><li>Valuation debates</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -943,11 +863,7 @@
           </div>
           <h4>Digital Assets</h4>
           <p>Bitcoin, Ethereum, stablecoins and DeFi — cycles, thesis and on-chain insight.</p>
-          <ul>
-            <li>Cycle analysis</li>
-            <li>Stablecoins &amp; on-ramps</li>
-            <li>Protocol research</li>
-          </ul>
+          <ul><li>Cycle analysis</li><li>Stablecoins &amp; on-ramps</li><li>Protocol research</li></ul>
         </div>
         <div class="ex-card">
           <div class="ex-top">
@@ -956,11 +872,7 @@
           </div>
           <h4>Alternatives</h4>
           <p>Real estate, commodities, gold and other uncorrelated assets.</p>
-          <ul>
-            <li>Real assets</li>
-            <li>Commodities</li>
-            <li>Diversification</li>
-          </ul>
+          <ul><li>Real assets</li><li>Commodities</li><li>Diversification</li></ul>
         </div>
       </div>
     </div>
@@ -972,11 +884,7 @@
         <div class="reveal">
           <span class="eyebrow">Digital Assets</span>
           <h2>Crypto for serious allocators</h2>
-          <p>
-            No hype. No moon-boy talk. No fake signals. Only structured, honest discussion
-            of blockchain, stablecoins, DeFi and how digital assets fit into a serious
-            portfolio — from members who've traded through multiple cycles.
-          </p>
+          <p>No hype. No moon-boy talk. No fake signals. Only structured, honest discussion of blockchain, stablecoins, DeFi and how digital assets fit into a serious portfolio — from members who've traded through multiple cycles.</p>
           <div class="crypto-stats">
             <div class="cs"><div class="v">8+</div><div class="l">Focused Rooms</div></div>
             <div class="cs"><div class="v">Weekly</div><div class="l">Cycle Reviews</div></div>
@@ -997,62 +905,14 @@
       </div>
 
       <div class="crypto-grid">
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">B</div>
-            <div><h4>Bitcoin</h4><div class="sym">BTC</div></div>
-          </div>
-          <p>Cycles, halving events and the long-term store-of-value thesis.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">E</div>
-            <div><h4>Ethereum</h4><div class="sym">ETH</div></div>
-          </div>
-          <p>Smart contracts, L2s and the ecosystem powering most of DeFi.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">S</div>
-            <div><h4>Stablecoins</h4><div class="sym">USDT · USDC · DAI</div></div>
-          </div>
-          <p>On-chain dollars, parking capital, trading pairs and the risks behind each peg.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">D</div>
-            <div><h4>DeFi</h4><div class="sym">Protocols</div></div>
-          </div>
-          <p>Staking, lending and liquidity — how to earn yield responsibly.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">A</div>
-            <div><h4>Altcoins</h4><div class="sym">Research</div></div>
-          </div>
-          <p>Reading tokenomics, spotting red flags and researching projects properly.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">O</div>
-            <div><h4>On-chain Data</h4><div class="sym">Analytics</div></div>
-          </div>
-          <p>Wallet flows, exchange reserves and stablecoin supply — reading the chain.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">C</div>
-            <div><h4>Security</h4><div class="sym">Custody</div></div>
-          </div>
-          <p>Hot vs cold wallets, seed phrase safety and avoiding common scams.</p>
-        </div>
-        <div class="c-coin reveal">
-          <div class="c-head">
-            <div class="c-mark">T</div>
-            <div><h4>Taxes</h4><div class="sym">Compliance</div></div>
-          </div>
-          <p>Tracking trades, understanding tax rules and staying compliant.</p>
-        </div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">B</div><div><h4>Bitcoin</h4><div class="sym">BTC</div></div></div><p>Cycles, halving events and the long-term store-of-value thesis.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">E</div><div><h4>Ethereum</h4><div class="sym">ETH</div></div></div><p>Smart contracts, L2s and the ecosystem powering most of DeFi.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">S</div><div><h4>Stablecoins</h4><div class="sym">USDT · USDC · DAI</div></div></div><p>On-chain dollars, parking capital, trading pairs and the risks behind each peg.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">D</div><div><h4>DeFi</h4><div class="sym">Protocols</div></div></div><p>Staking, lending and liquidity — how to earn yield responsibly.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">A</div><div><h4>Altcoins</h4><div class="sym">Research</div></div></div><p>Reading tokenomics, spotting red flags and researching projects properly.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">O</div><div><h4>On-chain Data</h4><div class="sym">Analytics</div></div></div><p>Wallet flows, exchange reserves and stablecoin supply — reading the chain.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">C</div><div><h4>Security</h4><div class="sym">Custody</div></div></div><p>Hot vs cold wallets, seed phrase safety and avoiding common scams.</p></div>
+        <div class="c-coin reveal"><div class="c-head"><div class="c-mark">T</div><div><h4>Taxes</h4><div class="sym">Compliance</div></div></div><p>Tracking trades, understanding tax rules and staying compliant.</p></div>
       </div>
     </div>
   </section>
@@ -1064,21 +924,9 @@
       <p>We keep the circle small and the signal high. Access is by request.</p>
     </div>
     <div class="steps">
-      <div class="step reveal">
-        <div class="num">1</div>
-        <h3>Join Discord</h3>
-        <p>Click the invite link and complete a short entry form about your work.</p>
-      </div>
-      <div class="step reveal">
-        <div class="num">2</div>
-        <h3>Introduce Yourself</h3>
-        <p>Post a real intro — what you build, trade or invest in, and what you're working on.</p>
-      </div>
-      <div class="step reveal">
-        <div class="num">3</div>
-        <h3>Start Contributing</h3>
-        <p>Join voice rooms, share theses and build real relationships with serious peers.</p>
-      </div>
+      <div class="step reveal"><div class="num">1</div><h3>Join Discord</h3><p>Click the invite link and complete a short entry form about your work.</p></div>
+      <div class="step reveal"><div class="num">2</div><h3>Introduce Yourself</h3><p>Post a real intro — what you build, trade or invest in, and what you're working on.</p></div>
+      <div class="step reveal"><div class="num">3</div><h3>Start Contributing</h3><p>Join voice rooms, share theses and build real relationships with serious peers.</p></div>
     </div>
   </section>
 
@@ -1087,7 +935,7 @@
       <div class="reveal">
         <span class="eyebrow">Borderless by design</span>
         <h2>Connect across countries, cultures and time zones</h2>
-        <p>Whov is built for international networking. Rotating events, regional channels and country ambassadors help you build genuine global relationships that move real work.</p>
+        <p><span data-brand="name">Whov</span> is built for international networking. Rotating events, regional channels and country ambassadors help you build genuine global relationships that move real work.</p>
         <div class="global-list">
           <div><span class="check"><svg class="ico"><use href="#i-check"/></svg></span> Rotating events across time zones</div>
           <div><span class="check"><svg class="ico"><use href="#i-check"/></svg></span> Country ambassadors and regional rooms</div>
@@ -1123,8 +971,8 @@
       <h2>Built for people who move capital and build things.</h2>
       <p>If that's you, join the circle. If it isn't, this isn't your room.</p>
       <div class="hero-cta">
-        <a href="https://discord.gg/Kn6rqd9VWS" class="btn btn-discord" target="_blank" rel="noopener">
-          <svg class="ico ico-sm"><use href="#i-discord"/></svg>
+        <a href="#" class="btn btn-discord" data-link-key="discord" target="_blank" rel="noopener">
+          <svg class="ico-brand"><use href="#i-discord"/></svg>
           Join Discord
         </a>
         <a href="#pillars" class="btn btn-ghost">See the pillars</a>
@@ -1133,17 +981,15 @@
   </section>
 </div>
 
-<!-- ABOUT -->
 <div class="page" id="page-about">
   <div class="doc-hero">
     <span class="eyebrow">About</span>
-    <h1>Why Whov exists</h1>
+    <h1>Why <span data-brand="name">Whov</span> exists</h1>
     <p>A private room for serious people. Built to cut through noise, build real relationships and move real capital.</p>
   </div>
   <div class="doc-body">
     <h2>Our Mission</h2>
-    <p>Whov exists to bring together founders, traders, investors and geopolitical thinkers into one high-signal room. We believe the quality of your peer group determines the quality of your decisions — and most online communities optimise for growth, not depth.</p>
-
+    <p><span data-brand="name">Whov</span> exists to bring together founders, traders, investors and geopolitical thinkers into one high-signal room. We believe the quality of your peer group determines the quality of your decisions — and most online communities optimise for growth, not depth.</p>
     <h2>What We Are</h2>
     <ul>
       <li>A private, invite-only community for people who build, allocate and analyse.</li>
@@ -1151,7 +997,6 @@
       <li>A network that spans 40+ countries with regional rooms, ambassadors and rotating events.</li>
       <li>A room where every contribution is expected to add something.</li>
     </ul>
-
     <h2>What We Are Not</h2>
     <ul>
       <li>Not a job board or freelance marketplace.</li>
@@ -1159,46 +1004,36 @@
       <li>Not a place for financial advice or guaranteed-return claims.</li>
       <li>Not a mass community. We keep it small on purpose.</li>
     </ul>
-
     <h2>Our Principles</h2>
     <h3>Signal over noise</h3>
     <p>Every channel, every rule and every decision is designed to protect the quality of conversation. Low-effort posts are removed. High-effort contributions are rewarded.</p>
-
     <h3>Respect and rigour</h3>
     <p>Disagreement is welcome. Disrespect is not. We expect members to argue ideas hard and treat people well — the two are not in conflict.</p>
-
     <h3>No financial advice</h3>
     <p>Nothing shared in this circle is financial, legal or tax advice. Every member is responsible for their own decisions. This is non-negotiable.</p>
-
     <h3>Global by default</h3>
     <p>We design for international members from day one — rotating event times, regional channels and language support.</p>
-
     <h2>Join</h2>
     <p>If this sounds like your kind of room, join on Discord. We keep the circle small and the entry deliberate.</p>
-    <p><a href="https://discord.gg/Kn6rqd9VWS" class="inline-link" target="_blank" rel="noopener">Join Discord →</a></p>
+    <p><a href="#" class="inline-link" data-link-key="discord" target="_blank" rel="noopener">Join Discord →</a></p>
   </div>
 </div>
 
-<!-- TERMS -->
 <div class="page" id="page-terms">
   <div class="doc-hero">
     <span class="eyebrow">Legal</span>
     <h1>Terms of Service</h1>
-    <p>The rules that govern your use of Whov and its Discord community.</p>
+    <p>The rules that govern your use of <span data-brand="name">Whov</span> and its Discord community.</p>
     <div class="updated">Last updated: January 2025</div>
   </div>
   <div class="doc-body">
     <div class="note"><strong>Plain-English summary:</strong> Use the community respectfully, don't break the law, don't spam, and understand that everything here is discussion — not advice.</div>
-
     <h2>1. Acceptance of Terms</h2>
-    <p>By accessing Whov ("the Community"), including our website and Discord server, you agree to be bound by these Terms of Service. If you do not agree, do not use the Community.</p>
-
+    <p>By accessing <span data-brand="name">Whov</span> ("the Community"), including our website and Discord server, you agree to be bound by these Terms of Service. If you do not agree, do not use the Community.</p>
     <h2>2. Eligibility</h2>
     <p>You must be at least 18 years old to join. By joining, you confirm that you have the legal capacity to enter into this agreement and that you are not barred from using the service under any applicable law.</p>
-
     <h2>3. Community Access</h2>
     <p>Access is granted on a request basis. We reserve the right to accept, reject or revoke access at any time, for any reason, without explanation. Membership is personal and non-transferable.</p>
-
     <h2>4. Acceptable Use</h2>
     <p>You agree not to:</p>
     <ul>
@@ -1210,34 +1045,25 @@
       <li>Scrape, resell or redistribute member data or private discussions.</li>
       <li>Attempt to gain unauthorised access to any part of the Community.</li>
     </ul>
-
     <h2>5. Content and Ownership</h2>
     <p>You retain ownership of content you post. By posting, you grant the Community a non-exclusive licence to display your content within the platform. You are solely responsible for what you post.</p>
-
     <h2>6. No Financial Advice</h2>
     <p>Nothing shared in the Community constitutes financial, investment, legal or tax advice. All discussion is for educational and informational purposes only. You are solely responsible for your own financial decisions.</p>
-
     <h2>7. Moderation and Enforcement</h2>
     <p>Moderators may remove content, issue warnings, mute or ban members at their discretion. Serious or repeated violations may result in permanent removal without notice.</p>
-
     <h2>8. Termination</h2>
     <p>We may suspend or terminate your access at any time. You may leave the Community at any time. These Terms survive termination where applicable.</p>
-
     <h2>9. Disclaimers</h2>
     <p>The Community is provided "as is" and "as available". We make no warranties of any kind, express or implied, regarding availability, accuracy or fitness for a particular purpose.</p>
-
     <h2>10. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by law, Whov, its owners, moderators and members shall not be liable for any indirect, incidental or consequential damages arising from your use of the Community.</p>
-
+    <p>To the maximum extent permitted by law, <span data-brand="name">Whov</span>, its owners, moderators and members shall not be liable for any indirect, incidental or consequential damages arising from your use of the Community.</p>
     <h2>11. Changes to Terms</h2>
     <p>We may update these Terms at any time. Continued use of the Community after changes constitutes acceptance of the revised Terms.</p>
-
     <h2>12. Contact</h2>
     <p>Questions about these Terms? <a href="#contact" class="inline-link" data-link="contact">Contact us</a>.</p>
   </div>
 </div>
 
-<!-- PRIVACY -->
 <div class="page" id="page-privacy">
   <div class="doc-hero">
     <span class="eyebrow">Legal</span>
@@ -1247,7 +1073,6 @@
   </div>
   <div class="doc-body">
     <div class="note"><strong>Plain-English summary:</strong> We collect very little. We don't sell your data. Ever.</div>
-
     <h2>1. Information We Collect</h2>
     <p>We collect minimal information to run the Community:</p>
     <ul>
@@ -1256,7 +1081,6 @@
       <li><strong>Usage data</strong> — basic server analytics from Discord (e.g., active members, channel activity).</li>
       <li><strong>Website data</strong> — anonymous analytics if you browse our site (aggregated, non-identifying).</li>
     </ul>
-
     <h2>2. How We Use Information</h2>
     <ul>
       <li>To operate and moderate the Community.</li>
@@ -1264,7 +1088,6 @@
       <li>To improve the Community experience.</li>
       <li>To communicate important updates (e.g., policy changes).</li>
     </ul>
-
     <h2>3. What We Do Not Do</h2>
     <ul>
       <li>We do not sell, rent or trade your personal data.</li>
@@ -1272,13 +1095,10 @@
       <li>We do not use your messages for training AI models.</li>
       <li>We do not collect more than we need to run the Community.</li>
     </ul>
-
     <h2>4. Third-Party Platforms</h2>
     <p>The Community primarily operates on Discord. Your use of Discord is governed by Discord's own Privacy Policy and Terms. We recommend reviewing them.</p>
-
     <h2>5. Data Retention</h2>
     <p>We retain content as long as it exists on Discord or is necessary for moderation and record-keeping. You may request deletion of specific content by contacting moderators.</p>
-
     <h2>6. Your Rights</h2>
     <p>Depending on your jurisdiction, you may have the right to:</p>
     <ul>
@@ -1287,25 +1107,19 @@
       <li>Object to certain processing.</li>
       <li>Lodge a complaint with a data protection authority.</li>
     </ul>
-
     <h2>7. Security</h2>
     <p>We take reasonable measures to protect your information, but no system is perfectly secure. Do not share sensitive personal, financial or legal information in the Community.</p>
-
     <h2>8. Children's Privacy</h2>
     <p>The Community is not intended for anyone under 18. We do not knowingly collect data from minors.</p>
-
     <h2>9. International Users</h2>
     <p>The Community is global. By joining, you consent to the processing of your information in the jurisdictions where we operate.</p>
-
     <h2>10. Changes to This Policy</h2>
     <p>We may update this Privacy Policy. Material changes will be announced in the Community.</p>
-
     <h2>11. Contact</h2>
     <p>Privacy questions? <a href="#contact" class="inline-link" data-link="contact">Contact us</a>.</p>
   </div>
 </div>
 
-<!-- RULES -->
 <div class="page" id="page-rules">
   <div class="doc-hero">
     <span class="eyebrow">Community</span>
@@ -1315,56 +1129,48 @@
   </div>
   <div class="doc-body">
     <div class="note"><strong>The core idea:</strong> High signal. Zero noise. Respect everyone. Argue ideas, not people.</div>
-
     <h2>1. Respect First</h2>
     <ul>
       <li>No harassment, hate speech, slurs or personal attacks.</li>
       <li>No discrimination based on race, religion, gender, nationality or identity.</li>
       <li>Disagree with ideas — never with the person.</li>
     </ul>
-
     <h2>2. No Spam, No Promotions</h2>
     <ul>
       <li>No unsolicited DMs promoting products, services or channels.</li>
       <li>No affiliate links, referral links or "DM me to learn more" posts.</li>
       <li>Self-promotion only in designated channels and only when relevant.</li>
     </ul>
-
     <h2>3. No Financial Advice</h2>
     <ul>
       <li>No "buy this now" calls, guaranteed-return claims or signal services.</li>
       <li>No pump-and-dump, coordinated buying or market manipulation.</li>
       <li>All discussion is educational. Members make their own decisions.</li>
     </ul>
-
     <h2>4. Keep Politics Civil</h2>
     <ul>
       <li>Political discussion belongs in designated channels only.</li>
       <li>No inflammatory, extremist or violent content.</li>
       <li>No fake news or unverified claims presented as fact.</li>
     </ul>
-
     <h2>5. Privacy and Consent</h2>
     <ul>
       <li>No doxxing — do not share anyone's personal information without consent.</li>
       <li>No screenshots of private conversations shared publicly without consent.</li>
       <li>Respect confidentiality of private rooms and mastermind pods.</li>
     </ul>
-
     <h2>6. No Illegal Activity</h2>
     <ul>
       <li>No content promoting illegal activity.</li>
       <li>No sharing of pirated content, stolen data or stolen financial information.</li>
       <li>No attempts to defraud or scam other members.</li>
     </ul>
-
     <h2>7. Stay On Topic</h2>
     <ul>
       <li>Post in the correct channel. Off-topic posts are moved or removed.</li>
       <li>Search before posting. Duplicate threads may be merged or removed.</li>
       <li>Keep voice rooms focused — no talking over others.</li>
     </ul>
-
     <h2>8. Enforcement</h2>
     <p>Violations are handled progressively:</p>
     <ul>
@@ -1373,13 +1179,11 @@
       <li><strong>Kick / Ban</strong> — for serious violations including scams, harassment, doxxing or financial advice.</li>
     </ul>
     <p>Moderators have final say. Appeals can be made via <a href="#contact" class="inline-link" data-link="contact">Contact</a>.</p>
-
     <h2>9. Reporting</h2>
     <p>If you see a violation, report it to a moderator rather than engaging directly. Do not reply to spam or harassment.</p>
   </div>
 </div>
 
-<!-- DISCLAIMER -->
 <div class="page" id="page-disclaimer">
   <div class="doc-hero">
     <span class="eyebrow">Important</span>
@@ -1389,15 +1193,12 @@
   </div>
   <div class="doc-body">
     <div class="note"><strong>Read this:</strong> Nothing here is financial advice. Trading, investing and crypto carry serious risk. You can lose money.</div>
-
     <h2>1. Not Financial Advice</h2>
-    <p>All content shared in Whov — including messages, voice discussions, shared documents, charts and analyses — is for <strong>educational and informational purposes only</strong>. It does not constitute financial, investment, legal or tax advice.</p>
+    <p>All content shared in <span data-brand="name">Whov</span> — including messages, voice discussions, shared documents, charts and analyses — is for <strong>educational and informational purposes only</strong>. It does not constitute financial, investment, legal or tax advice.</p>
     <p>We are not registered investment advisors, brokers, dealers or portfolio managers in any jurisdiction. Nothing in the Community should be interpreted as a recommendation to buy, sell or hold any security, asset or financial instrument.</p>
-
     <h2>2. Trading and Investment Risk</h2>
     <p>Trading and investing carry substantial risk. You may lose some or all of your capital. Past performance — whether of a member, a strategy or an asset — is never indicative of future results.</p>
     <p>Leverage, derivatives and crypto assets carry amplified risk. Never trade with money you cannot afford to lose.</p>
-
     <h2>3. Crypto Risk</h2>
     <p>Digital assets are highly volatile and largely unregulated in many jurisdictions. Risks include:</p>
     <ul>
@@ -1408,10 +1209,8 @@
       <li>Scams, rug pulls, phishing and fake projects.</li>
       <li>Stablecoin de-peg events — even "stable" assets can lose their peg under stress.</li>
     </ul>
-
     <h2>4. No Guarantees</h2>
-    <p>No member, moderator, founder or contributor of Whov guarantees any outcome, result or return. Anyone claiming guaranteed returns is violating our Community Rules and should be reported immediately.</p>
-
+    <p>No member, moderator, founder or contributor of <span data-brand="name">Whov</span> guarantees any outcome, result or return. Anyone claiming guaranteed returns is violating our Community Rules and should be reported immediately.</p>
     <h2>5. Do Your Own Research</h2>
     <p>Before making any financial decision:</p>
     <ul>
@@ -1420,22 +1219,17 @@
       <li>Consult a licensed financial advisor, accountant or lawyer where appropriate.</li>
       <li>Understand the risks specific to your situation.</li>
     </ul>
-
     <h2>6. Member Responsibility</h2>
-    <p>Every member is solely responsible for their own decisions. Whov, its owners, moderators and members accept no liability for any losses, damages or consequences arising from decisions made based on community content.</p>
-
+    <p>Every member is solely responsible for their own decisions. <span data-brand="name">Whov</span>, its owners, moderators and members accept no liability for any losses, damages or consequences arising from decisions made based on community content.</p>
     <h2>7. Third-Party Content</h2>
     <p>Members may share links, charts, opinions or resources from third parties. We do not endorse, verify or take responsibility for third-party content.</p>
-
     <h2>8. Regulatory Compliance</h2>
     <p>It is your responsibility to comply with the laws and regulations that apply to you — including securities law, tax law and any local restrictions on financial or crypto activity.</p>
-
     <h2>9. Acknowledgment</h2>
-    <p>By joining Whov, you acknowledge that you have read, understood and accepted this disclaimer.</p>
+    <p>By joining <span data-brand="name">Whov</span>, you acknowledge that you have read, understood and accepted this disclaimer.</p>
   </div>
 </div>
 
-<!-- CONTACT -->
 <div class="page" id="page-contact">
   <div class="doc-hero">
     <span class="eyebrow">Contact</span>
@@ -1444,35 +1238,33 @@
   </div>
   <div class="contact-wrap">
     <div class="contact-grid">
-      <a href="mailto:hello@whov.dev" class="contact-card">
+      <a href="#" class="contact-card" data-link-key="email">
         <div class="cc-ico"><svg class="ico"><use href="#i-mail"/></svg></div>
         <h4>Email</h4>
-        <p>hello@whov.dev<br>General enquiries and partnership requests.</p>
+        <p><span data-link-text="email">hello@whov.dev</span><br>General enquiries and partnership requests.</p>
       </a>
-      <a href="https://discord.gg/Kn6rqd9VWS" target="_blank" rel="noopener" class="contact-card">
-        <div class="cc-ico"><svg class="ico"><use href="#i-discord"/></svg></div>
+      <a href="#" class="contact-card" data-link-key="discord" target="_blank" rel="noopener">
+        <div class="cc-ico"><svg class="ico-brand"><use href="#i-discord"/></svg></div>
         <h4>Discord</h4>
         <p>The fastest way to reach the team and moderators.</p>
       </a>
-      <a href="#" target="_blank" rel="noopener" class="contact-card">
-        <div class="cc-ico"><svg class="ico"><use href="#i-x"/></svg></div>
+      <a href="#" class="contact-card" data-link-key="x" target="_blank" rel="noopener">
+        <div class="cc-ico"><svg class="ico-brand"><use href="#i-x"/></svg></div>
         <h4>X (Twitter)</h4>
         <p>Updates, announcements and public conversation.</p>
       </a>
-      <a href="#" target="_blank" rel="noopener" class="contact-card">
-        <div class="cc-ico"><svg class="ico"><use href="#i-linkedin"/></svg></div>
-        <h4>LinkedIn</h4>
-        <p>For professional and partnership enquiries.</p>
+      <a href="#" class="contact-card" data-link-key="instagram" target="_blank" rel="noopener">
+        <div class="cc-ico"><svg class="ico-brand"><use href="#i-instagram"/></svg></div>
+        <h4>Instagram</h4>
+        <p>Behind-the-scenes and community moments.</p>
       </a>
     </div>
 
     <div class="doc-body" style="padding:60px 0 0;">
       <h2>Response Times</h2>
       <p>We aim to respond to all enquiries within 48 hours. Moderation issues are prioritised and typically handled within a few hours on Discord.</p>
-
       <h2>Reporting Issues</h2>
       <p>For urgent moderation issues — harassment, scams or rule violations — please contact a moderator directly on Discord rather than emailing. Include screenshots and channel names where possible.</p>
-
       <h2>Media and Press</h2>
       <p>For interviews, features or press enquiries, please email with the subject line "Media" and include a deadline in your message.</p>
     </div>
@@ -1483,15 +1275,16 @@
   <div class="foot-wrap">
     <div class="foot-brand">
       <a href="#home" class="logo" data-link="home">
-        <div class="logo-mark"><svg class="ico"><use href="#i-crown"/></svg></div>
-        Whov
+        <div class="logo-mark" id="logo-mark-2"><svg class="ico"><use href="#i-crown"/></svg></div>
+        <span data-brand="name">Whov</span>
       </a>
       <p>A private, invite-only circle for founders, traders, investors and geopolitical thinkers. High signal. Zero noise.</p>
       <div class="foot-social">
-        <a href="https://discord.gg/Kn6rqd9VWS" target="_blank" rel="noopener" aria-label="Discord"><svg class="ico ico-sm"><use href="#i-discord"/></svg></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="X"><svg class="ico ico-sm"><use href="#i-x"/></svg></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico ico-sm"><use href="#i-linkedin"/></svg></a>
-        <a href="mailto:hello@whov.dev" aria-label="Email"><svg class="ico ico-sm"><use href="#i-mail"/></svg></a>
+        <a href="#" data-link-key="discord" target="_blank" rel="noopener" aria-label="Discord"><svg class="ico-brand"><use href="#i-discord"/></svg></a>
+        <a href="#" data-link-key="x" target="_blank" rel="noopener" aria-label="X"><svg class="ico-brand"><use href="#i-x"/></svg></a>
+        <a href="#" data-link-key="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico-brand"><use href="#i-instagram"/></svg></a>
+        <a href="#" data-link-key="github" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ico-brand"><use href="#i-github"/></svg></a>
+        <a href="#" data-link-key="email" aria-label="Email"><svg class="ico"><use href="#i-mail"/></svg></a>
       </div>
     </div>
 
@@ -1530,7 +1323,7 @@
   </div>
 
   <div class="foot-bottom">
-    <div>© 2025 Whov. All rights reserved.</div>
+    <div>© 2025 <span data-brand="name">Whov</span>. All rights reserved.</div>
     <div class="fb-links">
       <a data-link="terms" href="#terms">Terms</a>
       <a data-link="privacy" href="#privacy">Privacy</a>
@@ -1543,6 +1336,138 @@
 </div>
 
 <script>
+/* =========================================================
+   CONFIG LOADER
+   LOGO and FAVICON are SEPARATE files.
+   - Logo:    logo.png / logo.jpg / logo.jpeg / logo.webp
+   - Favicon: favicon.png / favicon.jpg / favicon.jpeg / favicon.webp / favicon.ico
+   config.json overrides auto-detect.
+   ========================================================= */
+(function loadConfig(){
+
+  var LOGO_CANDIDATES    = ['logo.png', 'logo.jpg', 'logo.jpeg', 'logo.webp', 'Logo.png', 'Logo.jpg'];
+  var FAVICON_CANDIDATES = ['favicon.png', 'favicon.jpg', 'favicon.jpeg', 'favicon.webp', 'favicon.ico', 'Favicon.png', 'Favicon.jpg'];
+
+  var FALLBACK_LOGO_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23f0efe9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></svg>'
+  );
+
+  var FALLBACK_FAVICON_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231a1a1a"><path d="M3 7l4 5 5-8 5 8 4-5-2 12H5L3 7z"/></svg>'
+  );
+
+  function detectFile(candidates, cb){
+    var i = 0;
+    function next(){
+      if (i >= candidates.length){ cb(null); return; }
+      var c = candidates[i++];
+      var img = new Image();
+      img.onload = function(){ cb(c); };
+      img.onerror = function(){ next(); };
+      img.src = c + '?v=' + Date.now();
+    }
+    next();
+  }
+
+  function applyLogo(src){
+    document.querySelectorAll('.logo-mark').forEach(function(m){
+      m.innerHTML = '<img src="' + src + '" alt="logo" />';
+    });
+  }
+
+  function applyFavicon(src){
+    document.querySelectorAll("link[rel*='icon']").forEach(function(el){ el.parentNode.removeChild(el); });
+
+    var l = document.createElement('link');
+    l.rel = 'icon';
+    if (src.indexOf('data:image/svg') === 0) l.type = 'image/svg+xml';
+    else if (src.indexOf('.png') > -1) l.type = 'image/png';
+    else if (src.indexOf('.jpg') > -1 || src.indexOf('.jpeg') > -1) l.type = 'image/jpeg';
+    else if (src.indexOf('.ico') > -1) l.type = 'image/x-icon';
+    l.href = src;
+    document.head.appendChild(l);
+
+    var apple = document.createElement('link');
+    apple.rel = 'apple-touch-icon';
+    apple.href = src;
+    document.head.appendChild(apple);
+
+    var shortcut = document.createElement('link');
+    shortcut.rel = 'shortcut icon';
+    shortcut.href = src;
+    document.head.appendChild(shortcut);
+  }
+
+  fetch('config.json?v=' + Date.now())
+    .then(function(r){
+      if (!r.ok) throw new Error('config.json not found');
+      return r.json();
+    })
+    .then(function(cfg){
+      if (cfg.brand && cfg.brand.name){
+        document.querySelectorAll('[data-brand="name"]').forEach(function(el){
+          el.textContent = cfg.brand.name;
+        });
+        document.title = cfg.brand.name + ' — A Private Circle';
+      }
+
+      /* LOGO */
+      if (cfg.brand && cfg.brand.logo){
+        var testImg = new Image();
+        testImg.onload = function(){ applyLogo(cfg.brand.logo); };
+        testImg.onerror = function(){
+          detectFile(LOGO_CANDIDATES, function(found){
+            applyLogo(found || FALLBACK_LOGO_SVG);
+          });
+        };
+        testImg.src = cfg.brand.logo + '?v=' + Date.now();
+      } else {
+        detectFile(LOGO_CANDIDATES, function(found){
+          applyLogo(found || FALLBACK_LOGO_SVG);
+        });
+      }
+
+      /* FAVICON */
+      if (cfg.brand && cfg.brand.favicon){
+        var testFav = new Image();
+        testFav.onload = function(){ applyFavicon(cfg.brand.favicon); };
+        testFav.onerror = function(){
+          detectFile(FAVICON_CANDIDATES, function(found){
+            applyFavicon(found || FALLBACK_FAVICON_SVG);
+          });
+        };
+        testFav.src = cfg.brand.favicon + '?v=' + Date.now();
+      } else {
+        detectFile(FAVICON_CANDIDATES, function(found){
+          applyFavicon(found || FALLBACK_FAVICON_SVG);
+        });
+      }
+
+      /* LINKS */
+      if (cfg.links){
+        Object.keys(cfg.links).forEach(function(key){
+          var url = cfg.links[key];
+          if (!url) return;
+          if (key === 'email' && url.indexOf('mailto:') !== 0){
+            url = 'mailto:' + url;
+          }
+          document.querySelectorAll('[data-link-key="' + key + '"]').forEach(function(el){
+            el.setAttribute('href', url);
+          });
+          document.querySelectorAll('[data-link-text="' + key + '"]').forEach(function(el){
+            var raw = cfg.links[key] || '';
+            el.textContent = raw.replace(/^mailto:/, '');
+          });
+        });
+      }
+    })
+    .catch(function(err){
+      console.warn('Config load issue:', err.message);
+      detectFile(LOGO_CANDIDATES, function(found){ applyLogo(found || FALLBACK_LOGO_SVG); });
+      detectFile(FAVICON_CANDIDATES, function(found){ applyFavicon(found || FALLBACK_FAVICON_SVG); });
+    });
+})();
+
 const pages = {
   home: 'page-home',
   about: 'page-about',
@@ -1562,10 +1487,7 @@ function showPage(name, anchor){
   if (anchor){
     requestAnimationFrame(() => {
       const el = document.querySelector(anchor);
-      if (el){
-        el.scrollIntoView({ behavior:'smooth', block:'start' });
-        return;
-      }
+      if (el){ el.scrollIntoView({ behavior:'smooth', block:'start' }); return; }
       window.scrollTo({ top:0, behavior:'smooth' });
     });
   } else {
@@ -1574,9 +1496,7 @@ function showPage(name, anchor){
 
   requestAnimationFrame(() => {
     document.querySelectorAll('.page.active .reveal').forEach(el => {
-      if (!el.classList.contains('visible')){
-        revealObserver.observe(el);
-      }
+      if (!el.classList.contains('visible')){ revealObserver.observe(el); }
     });
   });
 }
